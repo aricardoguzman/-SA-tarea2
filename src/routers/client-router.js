@@ -6,7 +6,7 @@ class ClientRouter {
   async acceptOrder (req, res) {
     const { order } = req.body
 
-    console.log(`No. de orden ${order}, recibido por cliente`)
+    console.log(`No. de orden C-${order.toString().padStart(6, '0')}, recibido por cliente`)
     res.send({ received: true })
   }
 }
