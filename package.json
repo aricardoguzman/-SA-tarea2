@@ -1,0 +1,26 @@
+{
+  "name": "Tareas",
+  "version": "1.0.0",
+  "description": "SA Tareas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aricardoguzman/-SA-TAREAS-201010425.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aricardoguzman/-SA-TAREAS-201010425/issues"
+  },
+  "homepage": "https://github.com/aricardoguzman/-SA-TAREAS-201010425#readme",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}
