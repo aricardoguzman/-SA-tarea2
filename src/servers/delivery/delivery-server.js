@@ -13,7 +13,7 @@ class DeliveryServer extends Server {
   }
 
   finishOrder (index) {
-    fetchQuery(configuration.CLIENT_API_URL + '/accept', 'POST', { order: index })
+    fetchQuery(configuration.EBS_API_URL + '/client/accept', 'POST', { order: index })
   }
 
   showDelivers () {

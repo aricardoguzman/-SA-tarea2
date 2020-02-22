@@ -33,13 +33,13 @@ class ReceptionServer extends Server {
   }
 
   async placeOrder (index) {
-    const deliverers = await fetchQuery(configuration.DELIVERY_API_URL + '/deliverers', 'GET')
+    const deliverers = await fetchQuery(configuration.EBS_API_URL + '/delivery/deliverers', 'GET')
     deliverers.forEach((it, idx) => console.log(idx + 1, it.id, 'Tiempo de entrega', it.time))
     let option = -1
     while ((option = await lineReader.askNumericQuestion('Elegir repartidor\n')) < 1 || option > deliverers.length);
 
     const { id, address } = receptioncontroller.orders[index]
-    fetchQuery(configuration.DELIVERY_API_URL + '/accept', 'POST', { id, address, deliverer: option - 1 }).then(res => {
+    fetchQuery(configuration.EBS_API_URL + '/delivery/accept', 'POST', { id, address, deliverer: option - 1 }).then(res => {
       if (res.success) {
         console.log('Orden colocada')
       } else {

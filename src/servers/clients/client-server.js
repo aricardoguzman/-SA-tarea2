@@ -33,7 +33,7 @@ class ClientServer extends Server {
   }
 
   async placeOrder () {
-    const data = await fetchQuery(configuration.RECEPTION_API_URL + '/accept', 'POST', this.orderinfo)
+    const data = await fetchQuery(configuration.EBS_API_URL + '/reception/accept', 'POST', this.orderinfo)
     console.log(`La orden se envió correctamente, pedido no. ${(data.id - 1).toString().padStart(6, '0')}`)
   }
 

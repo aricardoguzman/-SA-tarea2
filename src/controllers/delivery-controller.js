@@ -19,7 +19,7 @@ class DeliveryController {
   async placeDelivery (order) {
     await fileinout.appendFile(path.join(__dirname, '../database/delivery.txt'), `${order.order}-${order.address}`)
     setTimeout(() => {
-      fetchQuery(configuration.CLIENT_API_URL + '/accept', 'POST', { order: order.order }).then(() => console.log('Entrega exitosa'))
+      fetchQuery(configuration.EBS_API_URL + '/client/accept', 'POST', { order: order.order }).then(() => console.log('Entrega exitosa'))
     }, order.time)
   }
 
