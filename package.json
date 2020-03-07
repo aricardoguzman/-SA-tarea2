@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r esm ./src/index.js"
+    "start": "node -r esm ./src/index.js",
+    "build": "gulp",
+    "lambda-serve": "netlify-lambda serve ."
   },
   "repository": {
     "type": "git",
@@ -19,9 +21,14 @@
   },
   "homepage": "https://github.com/aricardoguzman/-SA-TAREAS-201010425#readme",
   "dependencies": {
+    "del": "^5.1.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.0"
+    "gulp-tag-version": "^1.3.1",
+    "gulp-zip": "^5.0.1",
+    "netlify-lambda": "^1.6.3",
+    "node-fetch": "^2.6.0",
+    "serverless-http": "^2.3.2"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
