@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node -r esm ./src/index.js",
-    "build": "gulp && netlify-lambda build express"
+    "build": "gulp && npm netlify-lambda build .",
+    "lambda-serve": "netlify-lambda serve ."
   },
   "repository": {
     "type": "git",
