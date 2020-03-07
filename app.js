@@ -42,7 +42,7 @@ router.get('/version.zip', (req, res) => {
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }))
 
 app.use('/.netlify/functions/app', router) // path must route to lambda
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, './dist/index.html')))
+app.use('/', (req, res) => res.sendFile('./dist/index.html'))
 
 module.exports = app
 module.exports.handler = serverless(app)
