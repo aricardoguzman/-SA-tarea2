@@ -11,12 +11,12 @@ const router = express.Router()
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' })
   res.write(`<h1>Descargar build!</h1>
-    <a href="/.netlify/functions/app/version" download>Descargar v1.2.0</a>`)
+    <a href="/.netlify/functions/app/version" download>Descargar archivo</a>`)
   res.end()
 })
 
 router.get('/version', (req, res) => {  
-  fs.readFile(path.join(__dirname, '/dist/archive.tar.gz'), (err, data) => {
+  fs.readFile(path.join(__dirname, '/dist/release.zip'), (err, data) => {
     if (err) {
 
     } else {
